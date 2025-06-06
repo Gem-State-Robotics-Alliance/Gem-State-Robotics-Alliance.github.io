@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!--Site summary at search-->
-  <meta name="description" content="We are the Official Robotics Alliance of Idaho, dedicated to empowering youth through robotics and STEAM education. Join us in inspiring the next generation of leaders and innovators!" />
+  <meta name="description" content="We are the Official Robotics Alliance of Idaho, dedicated to empowering youth through robotics and STEAM education. We are the Offical Organization for FTC and FLL in Idaho" />
   <title>Gem State Robotics Alliance</title>
   <style>
 
-    
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -24,6 +24,32 @@
       background: #0055a5;
       padding: 10px;
       text-align: center;
+      position: relative;
+    }
+    nav .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    nav .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+    nav .dropdown-content a {
+      color: #003366;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    nav .dropdown-content a:hover {
+      background-color: #e6f0ff;
+    }
+    nav .dropdown:hover .dropdown-content {
+      display: block;
     }
     nav a {
       color: white;
@@ -54,16 +80,52 @@
 </head>
 <body>
   <header>
-    <h1>Your Organization Name</h1>
-    <p>Empowering youth through robotics and STEAM education</p>
+    <h1>Gem State Rbotics Alliance</h1>
+    <p>Empowering youth through robotics and STEM education</p>
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#programs">Programs</a>
-    <a href="#events">Events</a>
-    <a href="#get-involved">Get Involved</a>
-    <a href="#contact">Contact</a>
+    <div class="dropdown">
+      <a href="#">About</a>
+      <div class="dropdown-content">
+        <a href="about.html">Mission</a>
+        <a href="team.html">Team</a>
+        <a href="history.html">History</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Programs</a>
+      <div class="dropdown-content">
+        <a href="ftc.html">FIRST Tech Challenge</a>
+        <a href="fll.html">FIRST LEGO League</a>
+        <a href="frc.html">FIRST Robotics Competition</a>
+        
+        
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Events</a>
+      <div class="dropdown-content">
+        <a href="calendar.html">Event Calendar</a>
+        <a href="workshops.html">Workshops</a>
+        <a href="competitions.html">Competitions</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Get Involved</a>
+      <div class="dropdown-content">
+        <a href="volunteer.html">Volunteer</a>
+        <a href="donate.html">Donate</a>
+        <a href="sponsor.html">Sponsor</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Contact</a>
+      <div class="dropdown-content">
+        <a href="contact.html">Contact Info</a>
+        <a href="location.html">Our Location</a>
+      </div>
+    </div>
   </nav>
 
   <section class="hero">
@@ -98,7 +160,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Your Organization Name. All rights reserved.</p>
+    <p>&copy; 2025 Gem State Robotics Alliance Inc. All rights reserved.</p>
   </footer>
 </body>
 </html>
