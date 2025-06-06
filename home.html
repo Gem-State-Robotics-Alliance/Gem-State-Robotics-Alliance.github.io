@@ -4,16 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!--Site summary at search-->
-  <meta name="description" content="We are the Official Robotics Alliance of Idaho, dedicated to empowering youth through robotics and STEAM education. We are the Offical Organization for FTC and FLL in Idaho" />
+  <meta name="description" content="We are the Official Robotics Alliance of Idaho, dedicated to empowering youth through robotics and STEAM education. We are the Official Organization for FTC and FLL in Idaho" />
   <title>Gem State Robotics Alliance</title>
   <style>
-
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
-    }
+      padding-top: 50px; /* Add space for fixed nav */
+    }   
     header {
       background: #003366;
       color: #fff;
@@ -22,9 +21,12 @@
     }
     nav {
       background: #0055a5;
-      padding: 10px;
+      padding: 20px;
       text-align: center;
-      position: relative;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
     }
     nav .dropdown {
       position: relative;
@@ -39,10 +41,12 @@
       z-index: 1;
       border-radius: 10px;
       overflow: hidden;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
     nav .dropdown-content a {
       color: #003366;
-      padding: 12px 16px;
+      padding: 10px 16px;
       text-decoration: none;
       display: block;
       text-align: left;
@@ -60,13 +64,13 @@
       font-weight: bold;
       transition: background-color 0.3s;
       border-radius: 5px;
-      padding: 5px 10px;
+      padding: 5px 11px;
     }
     nav .dropdown:hover > a {
       background-color: #007bff;
     }
     nav .active {
-      background-color: #007bff;
+      -webkit-text-fill-color: #007bff;
     }
     section.hero {
       padding: 60px 20px;
@@ -81,7 +85,7 @@
     footer {
       background: #003366;
       color: white;
-      text-align: center;
+      text-align: left;
       padding: 20px;
       position: relative;
       bottom: 0;
@@ -91,11 +95,14 @@
 </head>
 <body>
   <header>
-    <h1>Gem State Rbotics Alliance</h1>
+    <h1>Gem State Robotics Alliance</h1>
     <p>Empowering youth through robotics and STEM education</p>
   </header>
 
   <nav>
+    <div class="dropdown">
+      <a href="home.html" class="active">Home</a>
+    </div>
     <div class="dropdown">
       <a href="#">About</a>
       <div class="dropdown-content">
@@ -110,8 +117,6 @@
         <a href="ftc.html">FIRST Tech Challenge</a>
         <a href="fll.html">FIRST LEGO League</a>
         <a href="frc.html">FIRST Robotics Competition</a>
-        
-        
       </div>
     </div>
     <div class="dropdown">
@@ -146,32 +151,34 @@
 
   <section class="content" id="about">
     <h2>About Us</h2>
-    <p>This is where you can describe your mission, your history, and what your organization does.</p>
+    <p>Gem State Robotics Alliance is the official FTC and FLL partner organization in Idaho. We promote robotics and STEAM education by supporting local teams and events.</p>
   </section>
 
   <section class="content" id="programs">
     <h2>Our Programs</h2>
-    <p>List the robotics and STEAM programs you offer. Link to additional info or resources.</p>
+    <p>We offer support for FIRST Tech Challenge and FIRST LEGO League programs, helping youth build technical and teamwork skills through robotics.</p>
   </section>
 
   <section class="content" id="events">
     <h2>Events</h2>
-    <p>Highlight upcoming events, competitions, or workshops.</p>
+    <p>Check out our calendar for exciting competitions, community expos, and training workshops across the state.</p>
   </section>
 
   <section class="content" id="get-involved">
     <h2>Get Involved</h2>
-    <p>Provide information on volunteering, donating, and partnering with your organization.</p>
+    <p>Whether you want to mentor a team, donate, or sponsor a tournament, there are many ways you can make a difference with GSRA.</p>
   </section>
 
   <section class="content" id="contact">
     <h2>Contact Us</h2>
-    <p>Email: info@yourdomain.org</p>
+    <p>Email: info@gemstaterobotics.org</p>
     <p>Phone: (123) 456-7890</p>
   </section>
 
   <footer>
     <p>&copy; 2025 Gem State Robotics Alliance Inc. All rights reserved.</p>
+    <h2>Contact Us</h2>
+    <p>Email:</p><a href="mailto:@gsrobotics.org"></a>
   </footer>
 </body>
 </html>
