@@ -3,135 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!--Site summary at search-->
-  <meta name="description" content="We are the Official Robotics Alliance of Idaho, dedicated to empowering youth through robotics and STEAM education. We are the Official Organization for FTC and FLL in Idaho" />
+  <meta name="description" content="We are the Official Robotics Alliance of Idaho, dedicated to empowering youth through robotics and STEAM education." />
   <title>Gem State Robotics Alliance</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
-      padding-top: 70px; /* space for fixed nav */
+      padding-top: 70px;
     }
+
     header {
       background: #003366;
       color: #fff;
       padding: 20px;
       text-align: center;
     }
+
     nav {
       background: #0055a5;
-      padding: 20px;
-      text-align: center;
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
+      padding: 20px;
       z-index: 1000;
-    }
-    nav .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    nav .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      border-radius: 10px;
-      overflow: hidden;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-    nav .dropdown-content a {
-      color: #003366;
-      padding: 10px 16px;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-    }
-    nav .dropdown-content a:hover {
-      background-color: #e6f0ff;
-    }
-    nav .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-      border-radius: 5px;
-      padding: 5px 11px;
-      display: inline-block;
-    }
-    nav .dropdown:hover > a {
-      background-color: #007bff;
-    }
-    nav .active {
-      -webkit-text-fill-color: #007bff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    /* Mobile menu toggle button */
     .menu-toggle {
-      display: none;
       font-size: 28px;
       color: white;
       background: none;
       border: none;
       cursor: pointer;
-      position: absolute;
-      top: 18px;
-      right: 20px;
+      display: none;
       z-index: 1100;
     }
 
-    /* NAV LINKS CONTAINER - controls whole menu visibility */
     .nav-links-container {
-      /* By default, visible for desktop */
-      display: inline-block;
+      display: flex;
+      gap: 15px;
     }
 
-    /* Mobile styles */
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #007bff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 16px;
+      color: #003366;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #e6f0ff;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* --- Mobile Styles --- */
     @media (max-width: 768px) {
-      nav {
-        padding: 15px 20px 60px 20px; /* extra bottom padding for menu */
-        text-align: left;
-      }
       .menu-toggle {
         display: block;
+        position: absolute;
+        left: 20px;
       }
-      /* Hide nav links container by default on mobile */
+
       .nav-links-container {
         display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #0055a5;
+        padding: 20px;
+        z-index: 999;
       }
-      /* Show nav links container when nav is "nav-open" */
+
       nav.nav-open .nav-links-container {
-        display: block;
+        display: flex;
       }
-      /* Dropdowns and links stacked vertically on mobile */
-      nav .dropdown,
-      nav a {
-        display: block;
-        margin: 0;
+
+      .dropdown {
+        width: 100%;
       }
-      /* Dropdown content static and styled for mobile */
-      nav .dropdown-content {
+
+      .dropdown-content {
         position: static;
         box-shadow: none;
-        border-radius: 0;
         background-color: #e6f0ff;
-        padding: 0;
+        border-radius: 0;
+        padding-left: 10px;
         display: none;
       }
-      /* Show dropdown content when dropdown has "open" class on mobile */
-      nav .dropdown.open > .dropdown-content {
+
+      .dropdown.open .dropdown-content {
         display: block;
       }
-      nav .dropdown > a {
-        padding: 10px 0;
+
+      nav a {
+        padding: 12px 0;
+        display: block;
       }
     }
 
@@ -146,12 +149,12 @@
       max-width: 900px;
       margin: auto;
     }
-    
+
     footer {
       background: #003366;
       color: white;
-      text-align: left;
       padding: 20px;
+      text-align: left;
     }
   </style>
 </head>
@@ -165,7 +168,7 @@
     <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
     <div class="nav-links-container">
       <div class="dropdown">
-        <a href="home.html" class="">Home</a>
+        <a href="home.html">Home</a>
       </div>
       <div class="dropdown">
         <a href="#">About</a>
@@ -248,19 +251,18 @@
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
-    const dropdownLinks = document.querySelectorAll('nav .dropdown > a');
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
 
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('nav-open');
     });
 
-    // For mobile: toggle dropdown open/close on tap
     dropdownLinks.forEach(link => {
       link.addEventListener('click', (e) => {
-        if(window.innerWidth <= 768){
+        if (window.innerWidth <= 768) {
           e.preventDefault();
-          const parentDropdown = link.parentElement;
-          parentDropdown.classList.toggle('open');
+          const parent = link.parentElement;
+          parent.classList.toggle('open');
         }
       });
     });
