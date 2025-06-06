@@ -273,6 +273,7 @@
   </footer>
 
   <script>
+  document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const dropdowns = document.querySelectorAll('.dropdown');
@@ -298,6 +299,8 @@
         dropdowns.forEach(d => d.classList.remove('open'));
       }
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>

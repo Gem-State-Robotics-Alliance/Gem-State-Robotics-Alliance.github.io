@@ -248,32 +248,35 @@
   </footer>
 
   <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const dropdowns = document.querySelectorAll('.dropdown');
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
 
-  dropdowns.forEach(dropdown => {
-    dropdown.addEventListener('click', (e) => {
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.stopPropagation();
+          dropdowns.forEach(d => {
+            if (d !== dropdown) d.classList.remove('open');
+          });
+          dropdown.classList.toggle('open');
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
       if (window.innerWidth <= 768) {
-        e.stopPropagation();
-        dropdowns.forEach(d => {
-          if (d !== dropdown) d.classList.remove('open');
-        });
-        dropdown.classList.toggle('open');
+        dropdowns.forEach(d => d.classList.remove('open'));
       }
     });
   });
-
-  document.addEventListener('click', (e) => {
-    if (window.innerWidth <= 768) {
-      dropdowns.forEach(d => d.classList.remove('open'));
-    }
-  });
 </script>
+
 
 
 </body>

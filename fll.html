@@ -249,16 +249,35 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("show");
-    }
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
-    function toggleDropdown(event) {
-      event.preventDefault();
-      const parent = event.target.parentElement;
-      parent.classList.toggle("open");
-    }
-  </script>
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.stopPropagation();
+          dropdowns.forEach(d => {
+            if (d !== dropdown) d.classList.remove('open');
+          });
+          dropdown.classList.toggle('open');
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        dropdowns.forEach(d => d.classList.remove('open'));
+      }
+    });
+  });
+</script>
+
 
 </body>
 </html>
