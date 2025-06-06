@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Site summary at search-->
   <meta name="description" content="We are the Official Robotics Alliance of Idaho, dedicated to empowering youth through robotics and STEAM education. We are the Official Organization for FTC and FLL in Idaho" />
   <title>Gem State Robotics Alliance</title>
   <style>
@@ -10,7 +11,121 @@
       margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      padding-top: 90px; /* Enough space for fixed nav */
+      padding-top: 70px; /* space for fixed nav */
+    }
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #0055a5;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    nav .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    nav .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    nav .dropdown-content a {
+      color: #003366;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    nav .dropdown-content a:hover {
+      background-color: #e6f0ff;
+    }
+    nav .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      border-radius: 5px;
+      padding: 5px 11px;
+      display: inline-block;
+    }
+    nav .dropdown:hover > a {
+      background-color: #007bff;
+    }
+    nav .active {
+      -webkit-text-fill-color: #007bff;
+    }
+
+    /* Mobile menu toggle button */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      z-index: 1100;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      nav {
+        padding: 15px 20px 60px 20px; /* extra bottom padding for menu */
+        text-align: left;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      nav .dropdown,
+      nav a {
+        display: block;
+        margin: 0;
+      }
+      nav .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #e6f0ff;
+        padding: 0;
+        display: none;
+      }
+      nav .dropdown.open > .dropdown-content {
+        display: block;
+      }
+      /* Hide nav links by default on mobile */
+      nav nav-links-container {
+        display: none;
+      }
+      nav .nav-links-container {
+        display: none;
+      }
+      nav.nav-open .nav-links-container {
+        display: block;
+      }
+      nav .dropdown > a {
+        padding: 10px 0;
+      }
     }
     header {
       background: #003366;
@@ -19,134 +134,25 @@
       text-align: center;
     }
 
-    .nav-container {
-      background: #0055a5;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 30px;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 15px;
-      border-radius: 5px;
-      display: block;
-    }
-
-    nav .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-      border-radius: 10px;
-      overflow: hidden;
-      padding: 10px 0;
-      z-index: 1;
-    }
-
-    nav .dropdown-content a {
-      color: #003366;
-      padding: 10px 16px;
-      text-decoration: none;
-    }
-
-    nav .dropdown-content a:hover {
-      background-color: #e6f0ff;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    nav .dropdown:hover > a {
-      background-color: #007bff;
-    }
-
-    nav .active {
-      -webkit-text-fill-color: #007bff;
-    }
-
-    /* Mobile styles */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        width: 100%;
-        display: none;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .dropdown:hover .dropdown-content {
-        position: static;
-        display: none;
-      }
-
-      .dropdown.open .dropdown-content {
-        display: block;
-        position: static;
-        box-shadow: none;
-        background: #e6f0ff;
-      }
-    }
-
     section.hero {
       padding: 60px 20px;
       background: #e6f0ff;
       text-align: center;
     }
 
-    section.content {
+     section.content {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
     }
-
+    
     footer {
       background: #003366;
       color: white;
       text-align: left;
       padding: 20px;
-      position: relative;
-      bottom: 0;
-      width: 100%;
     }
+
   </style>
 </head>
 <body>
@@ -155,54 +161,52 @@
     <p>Empowering youth through robotics and STEM education</p>
   </header>
 
-  <div class="nav-container">
-    <nav>
-      <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-      <div class="nav-links">
-        <div class="dropdown">
-          <a href="home.html">Home</a>
-        </div>
-        <div class="dropdown">
-          <a href="#">About</a>
-          <div class="dropdown-content">
-            <a href="mission.html">Mission</a>
-            <a href="team.html">Team</a>
-            <a href="history.html">History</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#">Programs</a>
-          <div class="dropdown-content">
-            <a href="ftc.html">FIRST Tech Challenge</a>
-            <a href="fll.html">FIRST LEGO League</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#">Events</a>
-          <div class="dropdown-content">
-            <a href="calendar.html">Event Calendar</a>
-            <a href="workshops.html">Workshops</a>
-            <a href="competitions.html">Competitions</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#">Get Involved</a>
-          <div class="dropdown-content">
-            <a href="volunteer.html">Volunteer</a>
-            <a href="donate.html">Donate</a>
-            <a href="sponsor.html">Sponsor</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#">Contact</a>
-          <div class="dropdown-content">
-            <a href="contact.html">Contact Info</a>
-            <a href="location.html">Our Location</a>
-          </div>
+  <nav>
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="nav-links-container">
+      <div class="dropdown">
+        <a href="home.html" class="">Home</a>
+      </div>
+      <div class="dropdown">
+        <a href="#">About</a>
+        <div class="dropdown-content">
+          <a href="mission.html">Mission</a>
+          <a href="team.html">Team</a>
+          <a href="history.html">History</a>
         </div>
       </div>
-    </nav>
-  </div>
+      <div class="dropdown">
+        <a href="#">Programs</a>
+        <div class="dropdown-content">
+          <a href="ftc.html">FIRST Tech Challenge</a>
+          <a href="fll.html">FIRST LEGO League</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Events</a>
+        <div class="dropdown-content">
+          <a href="calendar.html">Event Calendar</a>
+          <a href="workshops.html">Workshops</a>
+          <a href="competitions.html">Competitions</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Get Involved</a>
+        <div class="dropdown-content">
+          <a href="volunteer.html">Volunteer</a>
+          <a href="donate.html">Donate</a>
+          <a href="sponsor.html">Sponsor</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Contact</a>
+        <div class="dropdown-content">
+          <a href="contact.html">Contact Info</a>
+          <a href="location.html">Our Location</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
   <section class="hero">
     <h2>Welcome to Our Community</h2>
@@ -243,18 +247,20 @@
 
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const dropdowns = document.querySelectorAll('.dropdown');
+    const nav = document.querySelector('nav');
+    const dropdowns = document.querySelectorAll('nav .dropdown > a');
 
     menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+      nav.classList.toggle('nav-open');
     });
 
-    dropdowns.forEach(dropdown => {
-      dropdown.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-          e.stopPropagation();
-          dropdown.classList.toggle('open');
+    // For mobile: toggle dropdown open/close on tap
+    dropdowns.forEach(link => {
+      link.addEventListener('click', (e) => {
+        if(window.innerWidth <= 768){
+          e.preventDefault();
+          const parentDropdown = link.parentElement;
+          parentDropdown.classList.toggle('open');
         }
       });
     });
