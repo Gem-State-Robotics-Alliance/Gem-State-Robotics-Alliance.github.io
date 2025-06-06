@@ -91,6 +91,51 @@
       bottom: 0;
       width: 100%;
     }
+     h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .team-member {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    /* Layout structure */
+    .top-row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .bottom-row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
   </style>
 </head>
 <body>
@@ -143,36 +188,49 @@
     </div>
   </nav>
 
-  <section class="hero">
-    <h2>Welcome to Our Community</h2>
-    <p>Join us in inspiring the next generation of leaders and innovators!</p>
-  </section>
+   <h1>Meet the Team</h1>
 
-  <section class="content" id="about">
-    <h2>About Us</h2>
-    <p>Gem State Robotics Alliance is the official FTC and FLL partner organization in Idaho. We promote robotics and STEAM education by supporting local teams and events.</p>
-  </section>
+  <div class="team-container">
 
-  <section class="content" id="programs">
-    <h2>Our Programs</h2>
-    <p>We offer support for FIRST Tech Challenge and FIRST LEGO League programs, helping youth build technical and teamwork skills through robotics.</p>
-  </section>
+    <!-- Top Row (2 members) -->
+    <div class="top-row">
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Member Photo">
+        <h3>Name</h3>
+        <p>FTC Program Delivery Partner</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Member Photo">
+        <h3>Name</div>/h3>
+        <p>FLL Program Delivery Partner</p>
+      </div>
+    </div>
 
-  <section class="content" id="events">
-    <h2>Events</h2>
-    <p>Check out our calendar for exciting competitions, community expos, and training workshops across the state.</p>
-  </section>
+    <!-- Bottom Row (4 members) -->
+    <div class="bottom-row">
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Member Photo">
+        <h3>Name</h3>
+        <p>President</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Member Photo">
+        <h3>Name</h3>
+        <p>Position</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Member Photo">
+        <h3>Name</h3>
+        <p>Position</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Member Photo">
+        <h3>Name</h3>
+        <p>Position</p>
+      </div>
+    </div>
 
-  <section class="content" id="get-involved">
-    <h2>Get Involved</h2>
-    <p>Whether you want to mentor a team, donate, or sponsor a tournament, there are many ways you can make a difference with GSRA.</p>
-  </section>
-
-  <section class="content" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: info@gemstaterobotics.org</p>
-    <p>Phone: (123) 456-7890</p>
-  </section>
+  </div>
 
   <footer>
     <p>&copy; 2025 Gem State Robotics Alliance Inc. All rights reserved.</p>
