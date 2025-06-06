@@ -88,6 +88,12 @@
       z-index: 1100;
     }
 
+    /* NAV LINKS CONTAINER - controls whole menu visibility */
+    .nav-links-container {
+      /* By default, visible for desktop */
+      display: inline-block;
+    }
+
     /* Mobile styles */
     @media (max-width: 768px) {
       nav {
@@ -97,11 +103,21 @@
       .menu-toggle {
         display: block;
       }
+      /* Hide nav links container by default on mobile */
+      .nav-links-container {
+        display: none;
+      }
+      /* Show nav links container when nav is "nav-open" */
+      nav.nav-open .nav-links-container {
+        display: block;
+      }
+      /* Dropdowns and links stacked vertically on mobile */
       nav .dropdown,
       nav a {
         display: block;
         margin: 0;
       }
+      /* Dropdown content static and styled for mobile */
       nav .dropdown-content {
         position: static;
         box-shadow: none;
@@ -110,28 +126,13 @@
         padding: 0;
         display: none;
       }
+      /* Show dropdown content when dropdown has "open" class on mobile */
       nav .dropdown.open > .dropdown-content {
-        display: block;
-      }
-      /* Hide nav links by default on mobile */
-      nav .nav-links-container {
-        display: none;
-      }
-      nav .nav-links-container {
-        display: none;
-      }
-      nav.nav-open .nav-links-container {
         display: block;
       }
       nav .dropdown > a {
         padding: 10px 0;
       }
-    }
-    header {
-      background: #003366;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
     }
 
     section.hero {
@@ -140,19 +141,18 @@
       text-align: center;
     }
 
-     section.content {
+    section.content {
       padding: 40px 20px;
       max-width: 900px;
       margin: auto;
     }
-
+    
     footer {
       background: #003366;
       color: white;
       text-align: left;
       padding: 20px;
     }
-
   </style>
 </head>
 <body>
@@ -248,14 +248,14 @@
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
-    const dropdowns = document.querySelectorAll('nav .dropdown > a');
+    const dropdownLinks = document.querySelectorAll('nav .dropdown > a');
 
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('nav-open');
     });
 
     // For mobile: toggle dropdown open/close on tap
-    dropdowns.forEach(link => {
+    dropdownLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         if(window.innerWidth <= 768){
           e.preventDefault();
