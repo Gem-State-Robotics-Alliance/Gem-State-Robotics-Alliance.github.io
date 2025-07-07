@@ -9,7 +9,6 @@
   <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/logos/GSRA.png" type="image/png">
 
-
   <style>
     body {
       margin: 0;
@@ -23,6 +22,24 @@
       color: #fff;
       padding: 20px;
       text-align: center;
+    }
+
+    header .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      width: 80px;
+      height: auto;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
     }
 
     .nav-container {
@@ -127,7 +144,6 @@
       -webkit-text-fill-color: #007bff;
     }
 
-    /* MOBILE STYLES */
     @media (max-width: 768px) {
       .menu-toggle {
         display: flex;
@@ -195,7 +211,9 @@
 </head>
 <body>
   <header>
-    <h1>Gem State Robotics Alliance</h1>
+    <div class="header-container">
+      <h1>Gem State Robotics Alliance</h1>
+    </div>
     <p>Empowering youth through robotics and STEM education</p>
   </header>
 
@@ -251,7 +269,6 @@
   </div>
 
   <section class="hero">
-     <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/logos/GSRA.png" alt="Gem State Robotics Alliance Logo" style="width: 150px; height: auto;">
     <h2>Welcome to Our Community</h2>
     <p>Join us in inspiring the next generation of leaders and innovators!</p>
   </section>
@@ -268,14 +285,13 @@
 
   <section class="centerimg" id="Season">
     <h3>Welcome to FIRST AGE</h3>
-    <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/firstage.svg" alt="FIRST Age - DECODE - UNEARTHED" style="width: 1000px; height: auto; margin: 0;" img/>
+    <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/firstage.svg" alt="FIRST Age - DECODE - UNEARTHED" style="width: 1000px; height: auto; margin: 0;" />
   </section>
 
   <section class="content" id="events">
     <h2>Events</h2>
     <p>Check out our calendar for exciting competitions, community expos, and training workshops across the state.</p>
   </section>
-  
 
   <section class="content" id="get-involved">
     <h2>Get Involved</h2>
