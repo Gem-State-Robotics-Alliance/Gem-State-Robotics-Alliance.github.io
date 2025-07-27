@@ -208,23 +208,30 @@
       font-size: 50px;
     }
 
+    /* Updated styles for program cards */
     .first-programs-container {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap; /* keep all cards on one line */
       justify-content: center;
-      gap: 40px;
+      gap: 20px; /* smaller gap for fitting */
       margin-top: 40px;
       text-align: center;
+      overflow-x: hidden; /* hide horizontal scrollbar */
+      padding-bottom: 10px;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .program-card {
-      width: 200px;
+      width: calc((100% - 60px) / 4); /* 4 cards minus 3 gaps of 20px */
+      flex-shrink: 0; /* prevent shrinking below calculated width */
+      box-sizing: border-box;
     }
 
     .program-card img {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
     }
 
     .program-title {
@@ -243,6 +250,16 @@
 
     .program-link i {
       font-style: italic;
+    }
+
+    /* Responsive tweak: on very small screens, stack cards */
+    @media (max-width: 480px) {
+      .first-programs-container {
+        flex-wrap: wrap;
+      }
+      .program-card {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -312,45 +329,36 @@
 
   <section class="content" id="about">
     <h2>About Us</h2>
-    <p>Gem State Robotics Alliance is the official FTC and FLL partner organization in Idaho. We promote robotics and STEAM education by supporting local teams and events.</p>
+    <p>Gem State Robotics Alliance is commited to supporting <i>FIRST</i> teams in Idaho. We promote robotics and STEAM education by supporting local teams and events.</p>
   </section>
 
   <section class="content">
     <h2>Our Programs</h2>
-    <p>We offer support for FIRST Tech Challenge and FIRST LEGO League programs, helping youth build technical and teamwork skills through robotics.</p>
+    <p>We offer support for <i>FIRST</i> Tech Challenge  <i>FIRST</i> LEGO League and <i>FIRST</i> Robotics Competition, helping youth build technical and teamwork skills through robotics.</p>
   </section>
 
-  <section class="centerimg" id="Season">
-    <h3>Welcome to FIRST AGE</h3>
-    <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/firstage.svg" alt="FIRST Age - DECODE - UNEARTHED" style="width: 1000px; height: auto; margin: 0;" />
-  </section>
-
-  <!-- NEW FIRST PROGRAM TILE SECTION -->
+  <!-- FIRST PROGRAM TILE SECTION -->
   <section class="content" id="first-programs">
     <h2 style="text-align: center; font-size: 36px;">Explore FIRST Programs</h2>
     <div class="first-programs-container">
       <div class="program-card">
-        <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/firstage.svg" alt="FIRST AGE" />
-        <div class="program-title">FIRST <span style="color: goldenrod;">AGE</span></div>
-        <a href="#" class="program-link"><i>FIRST</i> AGE Presented by Qualcomm</a>
+        <img src="https://lh6.googleusercontent.com/dqYRGxQS2B_euXFFR68FMsK9POnMRWOKwJ3wpS8QeP_w6USFFv-GLuyJqq-mIbGW5xag-SQN0f1x_djPkC5WzbgGY_UrOlRKx448wK7NoEL-BInM-NTWfJo_EfqNhA_v-dTokWmKzT0=w1280" alt="FIRST AGE" />
+        <a href="https://info.firstinspires.org/first-age?utm_source=hubspot&utm_medium=season-content&utm_campaign=fir-registration-026" class="program-link"><i>FIRST</i> AGE Presented by Qualcomm</a>
       </div>
 
       <div class="program-card">
-        <img src="https://via.placeholder.com/200x200.png?text=Unearthed" alt="Unearthed" />
-        <div class="program-title">UneartheD</div>
-        <a href="#" class="program-link"><i>FIRST</i> LEGO League Unearthed</a>
+        <img src="https://lh5.googleusercontent.com/RKP17NgE3vGV36aEVoKu-UAzvLTBmdRI2IFP2v1hQCRI2WLbqvLfDHHSO1bEYXHGWP7Y5TqLxCBNSHAPodbahHMnowfYSREUyUgtRr7v4I3RpHYpQwYfzfFKJep6bRriqft9dNlKCBE=w1280" alt="Unearthed" />
+        <a href="https://www.firstinspires.org/robotics/fll/game-and-season" class="program-link"><i>FIRST</i> LEGO League Unearthed</a>
       </div>
 
       <div class="program-card">
-        <img src="https://via.placeholder.com/200x200.png?text=Decode" alt="Decode" />
-        <div class="program-title">Decode</div>
-        <a href="#" class="program-link"><i>FIRST</i> Tech Challenge Decode</a>
+        <img src="https://static.wixstatic.com/media/49c9f8_d0b4b07e341841fa922b1cd7fb04ad8d~mv2.gif" alt="Decode" />
+        <a href="https://www.firstinspires.org/robotics/ftc/game-and-season" class="program-link"><i>FIRST</i> Tech Challenge Decode</a>
       </div>
 
       <div class="program-card">
-        <img src="https://via.placeholder.com/200x200.png?text=Rebuilt" alt="Rebuilt" />
-        <div class="program-title">Rebuilt</div>
-        <a href="#" class="program-link"><i>FIRST</i> Robotics Competition Rebuilt</a>
+        <img src="https://static.wixstatic.com/media/381ad3_0afbecc3d38249a4b4790200a6ddd2d3~mv2.gif" alt="Rebuilt" />
+        <a href="https://www.firstinspires.org/robotics/frc/game-and-season" class="program-link"><i>FIRST</i> Robotics Competition Rebuilt</a>
       </div>
     </div>
   </section>
@@ -367,7 +375,7 @@
 
   <section class="content" id="contact">
     <h2>Contact Us</h2>
-    <p>Email: info@gemstaterobotics.org</p>
+    <p>Email: info@gsrobotics.org</p>
     <p>Phone: (123) 456-7890</p>
   </section>
 
