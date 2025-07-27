@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="We are the Official Robotics Alliance of Idaho, dedicated to empowering youth through robotics and STEAM education. We are the Official Organization for FTC and FLL in Idaho" />
+  <meta name="description" content="We are the Official Robotics Alliance of Idaho, dedicated to empowering youth through robotics and STEAM education" />
   <title>Gem State Robotics Alliance</title>
 
   <!-- Favicon -->
@@ -207,6 +207,43 @@
       text-align: center;
       font-size: 50px;
     }
+
+    .first-programs-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .program-card {
+      width: 200px;
+    }
+
+    .program-card img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .program-title {
+      font-weight: bold;
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+
+    .program-link {
+      display: block;
+      color: #0055a5;
+      font-size: 1em;
+      margin-top: 5px;
+      text-decoration: underline;
+    }
+
+    .program-link i {
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -286,6 +323,36 @@
   <section class="centerimg" id="Season">
     <h3>Welcome to FIRST AGE</h3>
     <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/firstage.svg" alt="FIRST Age - DECODE - UNEARTHED" style="width: 1000px; height: auto; margin: 0;" />
+  </section>
+
+  <!-- NEW FIRST PROGRAM TILE SECTION -->
+  <section class="content" id="first-programs">
+    <h2 style="text-align: center; font-size: 36px;">Explore FIRST Programs</h2>
+    <div class="first-programs-container">
+      <div class="program-card">
+        <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/firstage.svg" alt="FIRST AGE" />
+        <div class="program-title">FIRST <span style="color: goldenrod;">AGE</span></div>
+        <a href="#" class="program-link"><i>FIRST</i> AGE Presented by Qualcomm</a>
+      </div>
+
+      <div class="program-card">
+        <img src="https://via.placeholder.com/200x200.png?text=Unearthed" alt="Unearthed" />
+        <div class="program-title">UneartheD</div>
+        <a href="#" class="program-link"><i>FIRST</i> LEGO League Unearthed</a>
+      </div>
+
+      <div class="program-card">
+        <img src="https://via.placeholder.com/200x200.png?text=Decode" alt="Decode" />
+        <div class="program-title">Decode</div>
+        <a href="#" class="program-link"><i>FIRST</i> Tech Challenge Decode</a>
+      </div>
+
+      <div class="program-card">
+        <img src="https://via.placeholder.com/200x200.png?text=Rebuilt" alt="Rebuilt" />
+        <div class="program-title">Rebuilt</div>
+        <a href="#" class="program-link"><i>FIRST</i> Robotics Competition Rebuilt</a>
+      </div>
+    </div>
   </section>
 
   <section class="content" id="events">
