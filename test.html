@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test Page with Imported Navbar</title>
+  <!-- Load navbar CSS -->
+  <link rel="stylesheet" href="/navbar.css" />
+  <style>
+    /* Some basic page styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 90px; /* to make room for fixed navbar */
+      background-color: #f9f9f9;
+      color: #333;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Placeholder for navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <h1>Welcome to the Test Page</h1>
+    <p>This page loads the navbar from <code>navbar.html</code> and the styles from <code>navbar.css</code>.</p>
+    <p>Resize the window to test mobile menu toggle and dropdowns.</p>
+  </main>
+
+  <!-- Load and insert navbar -->
+  <script>
+    fetch('/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+
+        // Setup navbar interactivity
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+        });
+
+        dropdowns.forEach(dropdown => {
+          dropdown.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+              e.stopPropagation();
+              dropdowns.forEach(d => {
+                if (d !== dropdown) d.classList.remove('open');
+              });
+              dropdown.classList.toggle('open');
+            }
+          });
+        });
+
+        document.addEventListener('click', () => {
+          if (window.innerWidth <= 768) {
+            dropdowns.forEach(d => d.classList.remove('open'));
+          }
+        });
+      })
+      .catch(err => {
+        console.error('Error loading navbar:', err);
+      });
+  </script>
+
+</body>
+</html>
