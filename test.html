@@ -4,18 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Test Page with Imported Navbar</title>
+
   <!-- Load navbar CSS -->
   <link rel="stylesheet" href="/navbar.css" />
+
   <style>
-    /* Some basic page styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding-top: 90px; /* to make room for fixed navbar */
+      padding-top: 90px; /* space for fixed navbar */
       background-color: #f9f9f9;
       color: #333;
       text-align: center;
     }
+
     main {
       max-width: 900px;
       margin: auto;
@@ -25,52 +27,56 @@
 </head>
 <body>
 
-  <!-- Placeholder for navbar -->
-  <div id="navbar-placeholder"></div>
+  <!-- Navbar placeholder -->
+  <div id="navbar"></div>
 
   <main>
     <h1>Welcome to the Test Page</h1>
-    <p>This page loads the navbar from <code>navbar.html</code> and the styles from <code>navbar.css</code>.</p>
+    <p>This page loads the navbar from <code>navbar.html</code>.</p>
     <p>Resize the window to test mobile menu toggle and dropdowns.</p>
   </main>
 
-  <!-- Load and insert navbar -->
+  <!-- Load navbar + setup interactivity -->
   <script>
-    fetch('/navbar.html')
+    fetch("/navbar.html")
       .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
+      .then(html => {
+        // Insert navbar
+        document.getElementById("navbar").innerHTML = html;
 
-        // Setup navbar interactivity
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const dropdowns = document.querySelectorAll('.dropdown');
+        // Setup navbar behavior AFTER it loads
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+        const dropdowns = document.querySelectorAll(".dropdown");
 
-        menuToggle.addEventListener('click', () => {
-          navLinks.classList.toggle('show');
+        // Mobile menu toggle
+        menuToggle.addEventListener("click", () => {
+          navLinks.classList.toggle("show");
         });
 
+        // Mobile dropdown toggle
         dropdowns.forEach(dropdown => {
-          dropdown.addEventListener('click', (e) => {
+          dropdown.addEventListener("click", (e) => {
             if (window.innerWidth <= 768) {
               e.stopPropagation();
+
               dropdowns.forEach(d => {
-                if (d !== dropdown) d.classList.remove('open');
+                if (d !== dropdown) d.classList.remove("open");
               });
-              dropdown.classList.toggle('open');
+
+              dropdown.classList.toggle("open");
             }
           });
         });
 
-        document.addEventListener('click', () => {
+        // Close dropdowns when clicking outside
+        document.addEventListener("click", () => {
           if (window.innerWidth <= 768) {
-            dropdowns.forEach(d => d.classList.remove('open'));
+            dropdowns.forEach(d => d.classList.remove("open"));
           }
         });
       })
-      .catch(err => {
-        console.error('Error loading navbar:', err);
-      });
+      .catch(err => console.error("Error loading navbar:", err));
   </script>
 
 </body>
