@@ -119,6 +119,11 @@ nav a {
     justify-content: flex-start;
   }
 
+  .nav-container {
+    padding-top: 20px;
+    padding-bottom: 28px; /* 👈 increases bar height */
+  }
+
   .menu-toggle {
     display: flex;
   }
