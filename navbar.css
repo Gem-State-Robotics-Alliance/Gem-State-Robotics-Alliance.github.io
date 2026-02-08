@@ -122,7 +122,7 @@ nav a {
 
   .nav-container {
     padding-top: 15px;
-    padding-bottom: 28px; /* 👈 increases bar height */
+    padding-bottom: 20px; /*  increases bar height */
   }
 
   .menu-toggle {
@@ -134,7 +134,7 @@ nav a {
     display: none;
     flex-direction: column;
     background-color: #0055a5;
-    top: 54px;
+    top: 44px;
     width: 100%;
     position: absolute;
     top: 100%;
