@@ -252,30 +252,48 @@
   </footer>
 
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const dropdowns = document.querySelectorAll('.dropdown');
+    fetch("/navbar.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("navbar").innerHTML = html;
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const dropdowns = document.querySelectorAll(".dropdown");
+    const navContainer = document.querySelector(".nav-container");
+
+    // Toggle menu
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      menuToggle.classList.toggle("open"); // hamburger → down arrow
     });
 
+    // Mobile dropdowns
     dropdowns.forEach(dropdown => {
-      dropdown.addEventListener('click', (e) => {
+      dropdown.addEventListener("click", e => {
         if (window.innerWidth <= 768) {
           e.stopPropagation();
           dropdowns.forEach(d => {
-            if (d !== dropdown) d.classList.remove('open');
+            if (d !== dropdown) d.classList.remove("open");
           });
-          dropdown.classList.toggle('open');
+          dropdown.classList.toggle("open");
         }
       });
     });
 
-    document.addEventListener('click', (e) => {
+    // Close dropdowns if clicking outside
+    document.addEventListener("click", () => {
       if (window.innerWidth <= 768) {
-        dropdowns.forEach(d => d.classList.remove('open'));
+        dropdowns.forEach(d => d.classList.remove("open"));
+      }
+    });
+
+    // Condense navbar on scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navContainer.classList.add('scrolled');
+      } else {
+        navContainer.classList.remove('scrolled');
       }
     });
   });
