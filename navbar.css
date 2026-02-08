@@ -117,7 +117,7 @@ nav a {
   /* Move hamburger to left */
   nav {
     justify-content: flex-start;
-    min-height: 64px;
+    min-height: 44px;
   }
 
   .nav-container {
@@ -134,12 +134,12 @@ nav a {
     display: none;
     flex-direction: column;
     background-color: #0055a5;
-    top: 44px;
+    top: 20px;
     width: 100%;
     position: absolute;
     top: 100%;
     left: 0;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
   }
 
   /* Show when hamburger is clicked */
