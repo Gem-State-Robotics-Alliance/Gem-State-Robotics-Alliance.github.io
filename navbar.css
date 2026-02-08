@@ -9,6 +9,19 @@
   z-index: 1000;
   padding-top: 10px;
   padding-bottom: 16px;
+  transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+/* Condensed navbar on scroll */
+.nav-container.scrolled {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+/* Shrink logo on scroll */
+.nav-container.scrolled img {
+  height: 80px;
+  transition: height 0.3s ease;
 }
 
 /* =========================
@@ -18,7 +31,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap; /* 🔒 prevent wrapping */
+  flex-wrap: nowrap; /* prevent wrapping */
   padding: 10px 20px;
   position: relative;
 }
@@ -40,6 +53,7 @@ nav {
   cursor: pointer;
   padding: 0;
   z-index: 1100;
+  transition: top 0.3s ease;
 }
 
 .menu-toggle:focus {
@@ -133,7 +147,7 @@ nav a {
   /* Mobile nav row height */
   nav {
     justify-content: flex-start;
-    min-height: 44px; /* space for hamburger */
+    min-height: 64px; /* space for hamburger */
   }
 
   /* Increase container height */
@@ -176,5 +190,15 @@ nav a {
   /* Click-to-open dropdowns */
   .dropdown.open .dropdown-content {
     display: block;
+  }
+
+  /* Condense nav height on scroll */
+  .nav-container.scrolled {
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+
+  nav.scrolled {
+    min-height: 48px;
   }
 }
