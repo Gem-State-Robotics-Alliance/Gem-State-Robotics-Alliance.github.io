@@ -18,7 +18,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap; /* 🔒 FIX #1: prevent wrapping */
+  flex-wrap: nowrap; /* 🔒 prevent wrapping */
   padding: 10px 20px;
   position: relative;
 }
@@ -46,11 +46,27 @@ nav {
   outline: none;
 }
 
+/* Bars and animation */
 .menu-toggle .bar {
   width: 100%;
   height: 3px;
   background-color: white;
   border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Morph into down arrow when menu is open */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* =========================
@@ -114,35 +130,37 @@ nav a {
    ========================= */
 @media (max-width: 768px) {
 
-  /* Move hamburger to left */
+  /* Mobile nav row height */
   nav {
     justify-content: flex-start;
-    min-height: 44px;
+    min-height: 64px; /* space for hamburger */
   }
 
+  /* Increase container height */
   .nav-container {
     padding-top: 15px;
-    padding-bottom: 20px; /*  increases bar height */
+    padding-bottom: 20px; /* increases bar height */
   }
 
   .menu-toggle {
     display: flex;
+    top: 50%;
+    transform: translateY(-50%); /* vertically center */
   }
 
-  /* 🔒 FIX #2: hide ALL nav items */
+  /* Hide nav links by default */
   .nav-links {
     display: none;
     flex-direction: column;
     background-color: #0055a5;
-    top: 20px;
     width: 100%;
     position: absolute;
-    top: 100%;
+    top: 64px; /* start below hamburger */
     left: 0;
     padding-bottom: 20px;
   }
 
-  /* Show when hamburger is clicked */
+  /* Show nav links when menu is open */
   .nav-links.show {
     display: flex;
   }
