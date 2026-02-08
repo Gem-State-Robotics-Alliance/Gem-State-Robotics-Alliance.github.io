@@ -147,7 +147,7 @@ nav a {
   /* Mobile nav row height */
   nav {
     justify-content: flex-start;
-    min-height: 64px; /* space for hamburger */
+    min-height: 44px; /* space for hamburger */
   }
 
   /* Increase container height */
@@ -199,6 +199,6 @@ nav a {
   }
 
   nav.scrolled {
-    min-height: 48px;
+    min-height: 40px;
   }
 }
