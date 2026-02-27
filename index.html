@@ -42,66 +42,82 @@
       font-size: 36px;
     }
 
+    /* ===== DIVISION HEADERS ===== */
+    .division-header {
+      text-align: center;
+      padding: 50px 20px 10px 20px;
+      background: #ffffff;
+    }
+
+    .division-header h2 {
+      font-size: 40px;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .division-header p {
+      font-size: 18px;
+      color: #444;
+      margin: 0;
+    }
+
     .team-section {
-  padding: 60px 10%;
-  background-color: #f5f8ff;
-}
+      padding: 60px 10%;
+      background-color: #f5f8ff;
+    }
 
-.team-section.alt {
-  background-color: #ffffff;
-}
+    .team-section.alt {
+      background-color: #ffffff;
+    }
 
-.team-row {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  max-width: 1500px;
-  margin: auto;
-}
+    .team-row {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      max-width: 1500px;
+      margin: auto;
+    }
 
-.team-section.alt .team-row {
-  flex-direction: row-reverse;
-}
+    .team-section.alt .team-row {
+      flex-direction: row-reverse;
+    }
 
-.team-image img {
-  width: 100%;
-  max-width: 700px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+    .team-image img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-.team-text {
-  max-width: 500px;
-}
+    .team-text {
+      max-width: 500px;
+    }
 
-.team-text h2 {
-  font-size: 32px;
-  color: #003366;
-  margin-bottom: 15px;
-}
+    .team-text h2 {
+      font-size: 32px;
+      color: #003366;
+      margin-bottom: 15px;
+    }
 
-.team-text p {
-  font-size: 18px;
-  color: #333;
-  line-height: 1.6;
-}
+    .team-text p {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+    }
 
-/* Mobile responsive */
-@media (max-width: 900px) {
-  .team-row {
-    flex-direction: column !important;
-    text-align: center;
-  }
+    @media (max-width: 900px) {
+      .team-row {
+        flex-direction: column !important;
+        text-align: center;
+      }
 
-  .team-text {
-    margin-top: 20px;
-  }
-}
+      .team-text {
+        margin-top: 20px;
+      }
+    }
 
-
-    /* ====== BODY CONTENT ====== */
     section {
       padding: 0;
       margin: 0;
@@ -130,7 +146,6 @@
       background-color: #f5f8ff;
     }
 
-    /* ====== FOOTER ====== */
     footer {
       background: #003366;
       color: white;
@@ -139,15 +154,10 @@
     }
   </style>
 
-  
 <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=6E18fUFzBxHKxtbp&p=other"></script>
-
 </head>
 
-
-
 <body>
-
 
   <!-- ====== IMPORTED NAVBAR ====== -->
   <div id="navbar"></div>
@@ -175,7 +185,6 @@
 
   <givebutter-widget id="pQJAKj"></givebutter-widget>
 
-
   <!-- ====== UNDER CONSTRUCTION ====== -->
   <section class="content alt-bg"
            style="max-width:400px; margin:40px auto; padding:30px;
@@ -186,10 +195,7 @@
     </div>
   </section>
 
-
-
 <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=6E18fUFzBxHKxtbp&p=other"></script>
-
 
   <!-- ====== MISSION ====== -->
   <section class="content alt-bg"
@@ -217,123 +223,133 @@
     </div>
   </section>
 
+  <!-- ================= FTC DIVISION HEADER ================= -->
+  <section class="division-header">
+    <h2>FIRST Tech Challenge (FTC)</h2>
+    <p>High school competitive robotics teams</p>
+  </section>
+
   <!-- ====== TEAMS ADVANCING ====== -->
-<section class="team-section">
-  <div class="team-row">
-    <div class="team-image">
-      <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/5026-2.jpg" alt="5026 TC">
+  <section class="team-section">
+    <div class="team-row">
+      <div class="team-image">
+        <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/5026-2.jpg" alt="5026 TC">
+      </div>
+      <div class="team-text">
+        <h2>5026 Tesla Coils</h2>
+        <p>Inspire Award Winner and Finalist Alliance</p>
+        <p>Advancing to the FIRST World Championship in Houston, TX</p>
+      </div>
     </div>
-    <div class="team-text">
-      <h2>5026 Tesla Coils</h2>
-      <p>Inspire Award Winner and Finalist Alliance</p>
-      <p>Advancing to the FIRST World Championship in Houston, TX</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="team-section alt">
-  <div class="team-row">
-    <div class="team-image">
-      <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/SH-1.JPG" alt="25776 SH">
+  <section class="team-section alt">
+    <div class="team-row">
+      <div class="team-image">
+        <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/SH-1.JPG" alt="25776 SH">
+      </div>
+      <div class="team-text">
+        <h2>25776 Stealheads</h2>
+        <p>Control Award Winner and Winning Alliance Captian </p>
+        <p>Advancing to the Western Edge Premier Event in Long Beach, CA</p>
+      </div>
     </div>
-    <div class="team-text">
-      <h2>25776 Stealheads</h2>
-      <p>Control Award Winner and Winning Alliance Captian </p>
-      <p>Advancing to the Western Edge Premier Event in Long Beach, CA</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="team-section">
-  <div class="team-row">
-    <div class="team-image">
-      <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/RR-1.JPG" alt="Team 3">
+  <section class="team-section">
+    <div class="team-row">
+      <div class="team-image">
+        <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/RR-1.JPG" alt="Team 3">
+      </div>
+      <div class="team-text">
+        <h2>31970 Rusty Ratchets</h2>
+        <p>Winning Alliance</p>
+        <p>Advancing to the Western Edge Premier Event in Long Beach, CA</p>
+      </div>
     </div>
-    <div class="team-text">
-      <h2>31970 Rusty Ratchets</h2>
-      <p>Winning Alliance</p>
-      <p>Advancing to the Western Edge Premier Event in Long Beach, CA</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="team-section alt">
-  <div class="team-row">
-    <div class="team-image">
-      <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/HVCB-1.JPG" alt="HVCB">
+  <section class="team-section alt">
+    <div class="team-row">
+      <div class="team-image">
+        <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/HVCB-1.JPG" alt="HVCB">
+      </div>
+      <div class="team-text">
+        <h2>14147 High Voltage Couch Bananas</h2>
+        <p>Inspire Award 2nd Place</p>
+        <p>Advancing to the İstanbul Premier Event in İstanbul, 34 Türkiye</p>
+      </div>
     </div>
-    <div class="team-text">
-      <h2>14147 High Voltage Couch Bananas</h2>
-      <p>Inspire Award 2nd Place</p>
-      <p>Advancing to the İstanbul Premier Event in İstanbul, 34 Türkiye</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="team-section">
-  <div class="team-row">
-    <div class="team-image">
-      <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/QK-1.JPG" alt="Team 4">
+  <section class="team-section">
+    <div class="team-row">
+      <div class="team-image">
+        <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/QK-1.JPG" alt="Team 4">
+      </div>
+      <div class="team-text">
+        <h2>20169 The Quackens</h2>
+        <p>Reach Award</p>
+        <p>Selected for the Govenors Cup in Washingotn, D.C.</p>
+      </div>
     </div>
-    <div class="team-text">
-      <h2>20169 The Quackens</h2>
-      <p>Reach Award</p>
-      <p>Selected for the Govenors Cup in Washingotn, D.C.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="team-section alt">
-  <div class="team-row">
-    <div class="team-image">
-      <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/GSRA.png" alt="Team 5">
-    </div>
-    <div class="team-text">
-      <h2>61987 Masterminds</h2>
-      <p></p>
-    </div>
-  </div>
-</section>
+  <!-- ================= FLL DIVISION HEADER ================= -->
+  <section class="division-header">
+    <h2>FIRST LEGO League (FLL)</h2>
+    <p>Elementary and middle school robotics teams</p>
+  </section>
 
-<section class="team-section">
-  <div class="team-row">
-    <div class="team-image">
-      <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/GSRA.png" alt="Team 6">
+  <section class="team-section alt">
+    <div class="team-row">
+      <div class="team-image">
+        <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/GSRA.png" alt="Team 5">
+      </div>
+      <div class="team-text">
+        <h2>61987 Masterminds</h2>
+        <p></p>
+      </div>
     </div>
-    <div class="team-text">
-      <h2>53036 The Building Beast</h2>
-      <p></p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="team-section alt">
-  <div class="team-row">
-    <div class="team-image">
-      <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/GSRA.png" alt="Team 7">
+  <section class="team-section">
+    <div class="team-row">
+      <div class="team-image">
+        <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/GSRA.png" alt="Team 6">
+      </div>
+      <div class="team-text">
+        <h2>53036 The Building Beast</h2>
+        <p></p>
+      </div>
     </div>
-    <div class="team-text">
-      <h2>56277 Team Pac-Man</h2>
-      <p></p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="team-section">
-  <div class="team-row">
-    <div class="team-image">
-      <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/GSRA.png" alt="Team 8">
+  <section class="team-section alt">
+    <div class="team-row">
+      <div class="team-image">
+        <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/GSRA.png" alt="Team 7">
+      </div>
+      <div class="team-text">
+        <h2>56277 Team Pac-Man</h2>
+        <p></p>
+      </div>
     </div>
-    <div class="team-text">
-      <h2>70008 Ancient Bricks</h2>
-      <p></p>
+  </section>
+
+  <section class="team-section">
+    <div class="team-row">
+      <div class="team-image">
+        <img src="https://raw.githubusercontent.com/Gem-State-Robotics-Alliance/Gem-State-Robotics-Alliance.github.io/main/assets/GSRA.png" alt="Team 8">
+      </div>
+      <div class="team-text">
+        <h2>70008 Ancient Bricks</h2>
+        <p></p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <givebutter-widget id="Lq38Qp"></givebutter-widget>
-
-
 
   <!-- ====== CONTACT ====== -->
   <section class="content alt-bg"
@@ -346,18 +362,15 @@
   </section>
 
   <!-- ====== FOOTER ====== -->
-<!-- ====== FOOTER ====== -->
 <footer>
   <div style="max-width:1100px;margin:auto;position:relative;">
 
-    <!-- Centered Links -->
     <div style="display:flex;justify-content:center;gap:20px;margin-bottom:20px;flex-wrap:wrap;">
       <a href="Privacy/index.html" style="color:#fff;">Privacy Policy</a>
       <a href="web-notices.html" style="color:#fff;">Website Notices</a>
       <a href="sitemap.xml" style="color:#fff;">Sitemap</a>
     </div>
 
-    <!-- Seal positioned right -->
     <div style="position:absolute;right:0;top:0;">
       <a aria-label="Gem State Robotics Alliance"
          href="https://app.candid.org/profile/16526252/gem-state-robotics-alliance-41-2939872/?pkId=73d449bf-77c9-4b29-9766-721329c93d2e"
@@ -368,15 +381,12 @@
       </a>
     </div>
 
-    <!-- Copyright -->
     <div style="font-size:12px;color:#ccc;text-align:center;">
       © 2025 Gem State Robotics Alliance. A 501(c)(3) nonprofit organization.
     </div>
 
   </div>
 </footer>
-
-
 
   <!-- ====== NAVBAR LOADER + LOGIC ====== -->
   <script>
@@ -390,13 +400,11 @@
     const dropdowns = document.querySelectorAll(".dropdown");
     const navContainer = document.querySelector(".nav-container");
 
-    // Toggle menu
     menuToggle.addEventListener("click", () => {
       navLinks.classList.toggle("show");
-      menuToggle.classList.toggle("open"); // hamburger → down arrow
+      menuToggle.classList.toggle("open");
     });
 
-    // Mobile dropdowns
     dropdowns.forEach(dropdown => {
       dropdown.addEventListener("click", e => {
         if (window.innerWidth <= 768) {
@@ -409,14 +417,12 @@
       });
     });
 
-    // Close dropdowns if clicking outside
     document.addEventListener("click", () => {
       if (window.innerWidth <= 768) {
         dropdowns.forEach(d => d.classList.remove("open"));
       }
     });
 
-    // Condense navbar on scroll
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
         navContainer.classList.add('scrolled');
