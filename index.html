@@ -156,15 +156,7 @@
 
 <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=6E18fUFzBxHKxtbp&p=other"></script>
 
-<!-- MailerLite Universal -->
-<script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2271758');
-</script>
-<!-- End MailerLite Universal -->
+
 </head>
 
 <body>
@@ -388,23 +380,61 @@
 
       <!-- LEFT: LINKS -->
       <div style="min-width:200px;">
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <a href="Privacy/index.html" style="color:#fff;text-decoration:none;">Privacy Policy</a>
-          <a href="web-notices.html" style="color:#fff;text-decoration:none;">Website Notices</a>
-          <a href="sitemap.xml" style="color:#fff;text-decoration:none;">Sitemap</a>
-        </div>
+       <!-- MailerLite Signup Form -->
+<div id="mlb2-39987187" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39987187">
+  <div class="ml-form-align-center">
+    <div class="ml-form-embedWrapper embedForm">
+
+      <div class="ml-form-embedBody row-form">
+        <h4>GSRA Newsletter</h4>
+        <p>Sign up for news about robotics in the Gem State</p>
+
+        <form class="ml-block-form"
+              action="https://assets.mailerlite.com/jsonp/2271758/forms/184876856278779245/subscribe"
+              method="post" target="_blank">
+
+          <input type="email" name="fields[email]" placeholder="Email" required style="width:100%;padding:10px;margin-bottom:10px;">
+
+          <label style="font-size:12px;">
+            <input type="checkbox" required>
+            Opt in to receive news and updates.
+          </label>
+
+          <button type="submit" style="width:100%;padding:10px;margin-top:10px;background:black;color:white;">
+            Subscribe
+          </button>
+
+          <input type="hidden" name="ml-submit" value="1">
+          <input type="hidden" name="anticsrf" value="true">
+        </form>
+      </div>
+
+      <div class="ml-form-successBody row-success" style="display:none;">
+        <h4>Thank you!</h4>
+        <p>You have successfully joined our subscriber list.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MailerLite Script (REQUIRED) -->
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js"></script>
+
+<script>
+function ml_webform_success_39987187() {
+  document.querySelector('.ml-subscribe-form-39987187 .row-form').style.display = 'none';
+  document.querySelector('.ml-subscribe-form-39987187 .row-success').style.display = 'block';
+}
+</script>
       </div>
 
       <!-- CENTER: NEWSLETTER -->
       <div style="flex:1;min-width:200px;text-align:center;">
-        <h3 style="margin-bottom:10px;">Subscribe to Our Newsletter</h3>
-        <iframe 
-          width="100%" 
-          height="350" 
-          src="<div class="ml-embedded" data-form="j1D7MX"></div>"
-          frameborder="0"
-          style="border:none;max-width:100%;">
-        </iframe>
+         <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+        <script>
+            fetch("https://assets.mailerlite.com/jsonp/2271758/forms/184876856278779245/takel")
+        </script>
       </div>
 
       <!-- RIGHT: SOCIAL + CANDID -->
