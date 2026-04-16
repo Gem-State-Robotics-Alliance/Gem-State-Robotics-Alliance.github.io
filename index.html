@@ -156,7 +156,15 @@
 
 <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct=6E18fUFzBxHKxtbp&p=other"></script>
 
-
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2271758');
+</script>
+<!-- End MailerLite Universal -->
 </head>
 
 <body>
@@ -380,20 +388,21 @@
 
       <!-- LEFT: LINKS -->
       <div style="min-width:200px;">
-       <iframe 
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="Privacy/index.html" style="color:#fff;text-decoration:none;">Privacy Policy</a>
+          <a href="web-notices.html" style="color:#fff;text-decoration:none;">Website Notices</a>
+          <a href="sitemap.xml" style="color:#fff;text-decoration:none;">Sitemap</a>
+        </div>
+      </div>
+
+      <!-- CENTER: NEWSLETTER -->
+      <div style="flex:1;min-width:200px;text-align:center;">
+         <iframe 
   src="https://assets.mailerlite.com/forms/2271758/184876856278779245/share" 
   width="100%" 
   height="250" 
   style="border:none;">
 </iframe>
-      </div>
-
-      <!-- CENTER: NEWSLETTER -->
-      <div style="flex:1;min-width:200px;text-align:center;">
-         <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
-        <script>
-            fetch("https://assets.mailerlite.com/jsonp/2271758/forms/184876856278779245/takel")
-        </script>
       </div>
 
       <!-- RIGHT: SOCIAL + CANDID -->
